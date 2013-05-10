@@ -1,3 +1,3 @@
 #!/bin/bash
-Echo "» Launching chef solo"
+echo "» Launching chef solo"
 chef-solo -c config/solo.rb -j config/home.json $*
