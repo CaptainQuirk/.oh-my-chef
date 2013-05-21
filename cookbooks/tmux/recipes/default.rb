@@ -14,3 +14,7 @@ git "~/.tmux" do
 end
 
 # Symlinking this config file
+link "~/.tmux.conf" do
+  to "~/.tmux/tmux.conf"
+  action :create
+end
