@@ -1,3 +1,3 @@
 {
-  "run_list": ["apt::default", "recipe[tmux]", "recipe[dropbox]", "recipe[vim]"]
+  "run_list": ["apt::default", "recipe[tmux]", "recipe[dropbox]", "recipe[exuberant-ctags]", "recipe[w3m]", "recipe[vim]"]
 }
