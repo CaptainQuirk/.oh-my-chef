@@ -11,5 +11,6 @@ end
 # Symlinking this config file
 link "#{ENV['HOME']}/.vimrc" do
   to "#{ENV['HOME']}/.vim/vimrc"
+  enable_submodules true
   action :create
 end
