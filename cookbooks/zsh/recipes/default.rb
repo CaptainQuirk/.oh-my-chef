@@ -18,5 +18,5 @@ end
 # Changing default shell
 bash "change_default_shell" do
   cwd "#{ENV['HOME']}"
-  command "chsh -s /bin/zsh"
+  command "sudo chsh -s /bin/zsh #{ENV['USER']}"
 end
