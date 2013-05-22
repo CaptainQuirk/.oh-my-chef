@@ -10,7 +10,7 @@ git "#{ENV['HOME']}/.zsh" do
 end
 
 # Symlinking this config file
-link "#{ENV['HOME']}/.zsh" do
+link "#{ENV['HOME']}/.zshrc" do
   to "#{ENV['HOME']}/.zsh/zshrc"
   action :create
 end
