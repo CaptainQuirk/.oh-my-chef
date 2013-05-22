@@ -5,12 +5,12 @@ package 'vim'
 git "#{ENV['HOME']}/.vim" do
   repository "https://github.com/CaptainQuirk/.vim.git"
   reference "master"
+  enable_submodules true
   action :sync
 end
 
 # Symlinking this config file
 link "#{ENV['HOME']}/.vimrc" do
   to "#{ENV['HOME']}/.vim/vimrc"
-  enable_submodules true
   action :create
 end
