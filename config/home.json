@@ -1,6 +1,7 @@
 {
   "run_list": [
     "apt::default", 
+    "recipe[gitglobal]",
     "recipe[tmux]", 
     "recipe[dropbox]",
     "recipe[exuberant-ctags]",
