@@ -8,4 +8,11 @@ git "#{ENV['HOME']}/.iemvs-script" do
   action :sync
 end
 
-# New values in the crontab
+# New value in the crontab to execute vm download
+# every last thursday of the month
+cron "ievms" do
+  hour "21"
+  day "24-31"
+  weekday "4"
+  command "bash /home/$USER/.ievms-script/ievms.sh"
+end
