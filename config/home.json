@@ -8,6 +8,10 @@
     "recipe[w3m]", 
     "recipe[vim]",
     "recipe[zsh]",
-    "recipe[fluxbox]"
+    "recipe[fluxbox]",
+    "recipe[curl]",
+    "recipe[markdown]",
+    "recipe[virtualbox]",
+    "recipe[ack]"
   ]
 }
