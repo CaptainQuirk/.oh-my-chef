@@ -18,6 +18,11 @@
     "recipe[gimp]",
     "recipe[inkscape]",
     "recipe[meld]",
-    "recipe[vlc]"
+    "recipe[vlc]",
+    "recipe[lynx]",
+    "recipe[pwgen]",
+    "recipe[vagrant]",
+    "recipe[php5]",
+    "recipe[zenity]"
   ]
 }
