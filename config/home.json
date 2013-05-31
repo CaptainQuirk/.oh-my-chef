@@ -12,6 +12,12 @@
     "recipe[curl]",
     "recipe[markdown]",
     "recipe[virtualbox]",
-    "recipe[ack]"
+    "recipe[ack]",
+    "recipe[dia]",
+    "recipe[filezilla]",
+    "recipe[gimp]",
+    "recipe[inkscape]",
+    "recipe[meld]",
+    "recipe[vlc]"
   ]
 }
