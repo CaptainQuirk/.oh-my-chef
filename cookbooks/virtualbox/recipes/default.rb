@@ -14,6 +14,6 @@ cron "ievms" do
   hour "21"
   day "24-31"
   weekday "4"
-  user ENV['USER']
+  user ENV['SUDO_USER']
   command "bash /home/$USER/.ievms-script/ievms.sh"
 end
