@@ -16,9 +16,11 @@ link "#{ENV['HOME']}/.zshrc" do
 end
 
 # Changing default shell
-bash "change_default_shell" do
-  cwd "#{ENV['HOME']}"
-  code <<-EOH 
-  sudo chsh -s /bin/zsh $SUDO_USER
-  EOH
+if ENV['SHELL'] != '/bin/zsh'
+  bash "change_default_shell" do
+    cwd "#{ENV['HOME']}"
+    code <<-EOH 
+    sudo chsh -s /bin/zsh $SUDO_USER
+    EOH
+  end
 end
