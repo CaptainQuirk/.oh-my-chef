@@ -23,6 +23,8 @@
     "recipe[pwgen]",
     "recipe[vagrant]",
     "recipe[php5]",
-    "recipe[zenity]"
+    "recipe[zenity]",
+    "recipe[nodejs]",
+    "recipe[npm]"
   ]
 }
