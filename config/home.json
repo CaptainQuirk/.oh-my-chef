@@ -10,6 +10,7 @@
     "recipe[vim]",
     "recipe[zsh]",
     "recipe[fluxbox]",
+    "recipe[xcompmgr]",
     "recipe[curl]",
     "recipe[markdown]",
     "recipe[virtualbox]",
