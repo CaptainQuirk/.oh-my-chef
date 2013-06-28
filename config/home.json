@@ -27,6 +27,7 @@
     "recipe[php5]",
     "recipe[zenity]",
     "recipe[nodejs]",
-    "recipe[npm]"
+    "recipe[npm]",
+    "recipe[appcelerator]"
   ]
 }
