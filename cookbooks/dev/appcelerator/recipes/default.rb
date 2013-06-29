@@ -23,6 +23,7 @@ bash 'extract_sdk' do
   cwd ::File.dirname(src_filepath)
   code <<-EOH
     mkdir -p #{extract_path}
+    chown #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']} #{extract_path}
     tar xzf #{src_filename} -C #{extract_path}
     mv #{extract_path}/*/* #{extract_path}/
   EOH
