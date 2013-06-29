@@ -13,6 +13,8 @@ src_filepath = "#{Chef::Config['file_cache_path']}/#{src_filename}"
 extract_path = "#{ENV['HOME']}/.android/android-sdk"
 bin_symlink  = "#{node['android-sdk']['bin_symlink']}"
 
+
+
 # Getting remote archive
 remote_file src_filepath do
   source src_url 
@@ -24,7 +26,7 @@ bash 'extract_sdk' do
   cwd ::File.dirname(src_filepath)
   code <<-EOH
     mkdir -p #{extract_path}
-    chown #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']}
+    chown -R #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']} #{ENV['HOME']}/.android
     tar xzf #{src_filename} -C #{extract_path}
     mv #{extract_path}/*/* #{extract_path}/
   EOH
@@ -38,16 +40,23 @@ link bin_symlink do
   not_if { ::File.exists?(bin_symlink) }
 end
 
-# Launching the update command for the sdk tools/android sdk -u
-bash 'update sdk' do
-  cwd extract_path
-  code <<-EOH
-    ./tools/android update sdk -u
-  EOH
+# Installing titanium
+npm_package 'titanium'
+
+# Extracting titanium data
+titanium_bag = data_bag_item('credentials', 'titanium')
+
+# Login to titanium account and downloading
+appcelerator_titanium 'login' do
+  login titanium_bag['login']
+  password titanium_bag['password']
+  action :login
 end
 
-# Installing npm ?
+appcelerator_titanium 'install_sdk' do
+  action :install_sdk
+end
 
-# Connecting to appcelerator's account to download sdk if it
-# wasn't done
-
+appcelerator_titanium 'logout' do
+  action :logout
+end
