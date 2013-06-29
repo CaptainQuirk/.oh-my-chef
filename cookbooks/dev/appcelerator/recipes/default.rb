@@ -33,7 +33,7 @@ end
 
 # Launching the update command for the sdk tools/android sdk -u
 bash 'update sdk' do
-  cwd ::File.dirname(src_filepath)
+  cwd extract_path
   code <<-EOH
     ./tools/android sdk -u
   EOH
