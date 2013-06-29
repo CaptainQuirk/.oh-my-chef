@@ -36,7 +36,6 @@ bash 'update sdk' do
   code <<-EOH
     ./tools/android sdk -u
   EOH
-  not_if { ::File.exists?(extract_path) }
 end
 
 # Installing npm ?
