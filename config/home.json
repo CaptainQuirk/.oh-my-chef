@@ -3,6 +3,7 @@
     "apt::default", 
     "recipe[build-essential]",
     "recipe[home]",
+    "recipe[at]",
     "recipe[gitglobal]",
     "recipe[tmux]", 
     "recipe[dropbox]",
