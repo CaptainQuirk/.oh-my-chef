@@ -23,7 +23,7 @@ bash 'extract_sdk' do
   cwd ::File.dirname(src_filepath)
   code <<-EOH
     mkdir -p #{extract_path}
-    chown #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']} #{extract_path}
+    chown #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']}
     tar xzf #{src_filename} -C #{extract_path}
     mv #{extract_path}/*/* #{extract_path}/
   EOH
@@ -36,7 +36,7 @@ end
 bash 'update sdk' do
   cwd extract_path
   code <<-EOH
-    ./tools/android sdk -u
+    ./tools/android sdk update -u
   EOH
 end
 
