@@ -16,6 +16,7 @@ extract_path = "#{ENV['HOME']}/.android/android-sdk"
 remote_file src_filepath do
   source src_url 
   checksum src_checksum 
+  not_if { ::File.exists?(extract_path) }
 end
 
 bash 'extract_sdk' do
