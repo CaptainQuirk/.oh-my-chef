@@ -2,6 +2,7 @@
   "run_list": [
     "apt::default", 
     "recipe[build-essential]",
+    "recipe[home]",
     "recipe[gitglobal]",
     "recipe[tmux]", 
     "recipe[dropbox]",
