@@ -36,7 +36,7 @@ end
 bash 'update sdk' do
   cwd extract_path
   code <<-EOH
-    ./tools/android sdk update -u
+    ./tools/android update sdk -u
   EOH
 end
 
