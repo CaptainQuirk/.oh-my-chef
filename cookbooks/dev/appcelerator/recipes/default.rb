@@ -10,7 +10,7 @@ src_filename = "#{node['android-sdk']['filename']}"
 src_url      = "#{node['android-sdk']['base_url']}/#{src_filename}"
 src_checksum = "#{node['android-sdk']['checksum']}"
 src_filepath = "#{Chef::Config['file_cache_path']}/#{src_filename}"
-extract_path = "#{ENV['home']}/.android/android-sdk"
+extract_path = "#{ENV['HOME']}/.android/android-sdk"
 
 # Getting remote archive
 remote_file src_filepath do
