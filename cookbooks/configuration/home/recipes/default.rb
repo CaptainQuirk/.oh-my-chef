@@ -2,7 +2,7 @@
 # -----------------------
 
 # Creating a bin directory if it doesn't exist
-directory "#{ENV['home']}/bin" do
+directory "#{ENV['HOME']}/bin" do
   owner ENV['SUDO_USER']
   group ENV['SUDO_USER']
   mode 0755
@@ -10,7 +10,7 @@ directory "#{ENV['home']}/bin" do
 end
 
 # Creating a tmp directory if it doesn't exist
-directory "#{ENV['home']}/tmp" do
+directory "#{ENV['HOME']}/tmp" do
   owner ENV['SUDO_USER']
   group ENV['SUDO_USER']
   mode 0755
