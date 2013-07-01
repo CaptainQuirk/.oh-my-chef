@@ -57,6 +57,10 @@ appcelerator_titanium 'install_sdk' do
   action :install_sdk
 end
 
+# Calling a special install command to
+# get the cli's last version
+# titanium sdk install --branch master --default
+
 appcelerator_titanium 'logout' do
   action :logout
 end
