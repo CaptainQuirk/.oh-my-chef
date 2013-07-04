@@ -91,6 +91,6 @@ end
 # get the cli's last version
 # titanium sdk install --branch master --default
 
-appcelerator_titanium 'logout' do
+appcelerator_titanium_auth 'logout' do
   action :logout
 end
