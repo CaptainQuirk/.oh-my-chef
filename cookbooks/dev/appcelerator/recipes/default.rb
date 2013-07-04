@@ -22,6 +22,7 @@ remote_file src_filepath do
   not_if { ::File.exists?(extract_path) }
 end
 
+# Extracting archive
 bash 'extract_sdk' do
   cwd ::File.dirname(src_filepath)
   code <<-EOH
@@ -40,22 +41,51 @@ link bin_symlink do
   not_if { ::File.exists?(bin_symlink) }
 end
 
+# Adding the extract path to system PATH
+bash 'update-path' do
+  cwd ENV['home']
+  code <<-EOH
+    if [[ "$PATH" =~ (^|:)"#{extract_path}"(:|$) ]]
+    then
+        return 0
+    fi
+    export PATH=${1}:$PATH   
+  EOH
+end
+
+
+# Titanium SDK
+# ------------
+
 # Installing titanium
 npm_package 'titanium'
 
 # Extracting titanium data
-titanium_bag = data_bag_item('credentials', 'titanium')
+titanium_credentials = data_bag_item('credentials', 'titanium')
 
 # Login to titanium account and downloading
-appcelerator_titanium 'login' do
-  login titanium_bag['login']
-  password titanium_bag['password']
+appcelerator_titanium_auth 'login' do
+  login titanium_credentials['login']
+  password titanium_credentials['password']
   action :login
 end
 
-appcelerator_titanium 'install_sdk' do
-  action :install_sdk
+# Configuring the cli
+titanium_config = data_bag_item('configuration', 'titanium')
+
+%w{name email default_locale workspace}.each do |key_name|
+  appcelerator_titanium_config 'configure' do
+    key key_name
+    value titanium_config[key_name]
+    action :config
+  end
 end
+
+appcelerator_titanium_sdk 'install' do
+  action :install
+end
+
+# Retrieving last version of cli throught sdk update
 
 # Calling a special install command to
 # get the cli's last version
