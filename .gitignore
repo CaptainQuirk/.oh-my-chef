@@ -1,0 +1,8 @@
+# Ignoring folder for automatically generated scripts
+scripts_tank/*
+
+# Ignoring tmp folder
+tmp/*
+
+!scripts_tank/empty
+!tmp/empty
