@@ -1,8 +1,12 @@
-# Ignoring folder for automatically generated scripts
+# Ignoring content of folder of automatically generated scripts
+# but keeping the folder itself
 scripts_tank/*
-
-# Ignoring tmp folder
-tmp/*
-
 !scripts_tank/empty
+
+# Ignoring tmp folder content
+# but keeping the folder itself
+tmp/*
 !tmp/empty
+
+# Ignoring the test run list
+config/test.json
