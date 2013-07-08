@@ -1,0 +1,19 @@
+{
+  "name": "\"OhMyChef\"",
+  "version": "0.0.0",
+  "description": "Dev machine provisioning",
+  "main": "null",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@captainquirkhub:CaptainQuirk/.oh-my-chef.git"
+  },
+  "author": "CaptainQuirk",
+  "license": "null"
+}
