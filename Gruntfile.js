@@ -8,16 +8,19 @@ module.exports = function (grunt) {
       // inside both directories, recursively (** means « at any
       // place in the tree »
     watch: {
-      "queued_scripts": {
+      options: {
+        event: [ 'added' ]
+      },
+      queued_scripts: {
           files: [ "scripts_tank/**/*" ],
           tasks: [ "exec:execute" ]
       } 
     },
     exec: {
       execute : {
-        command: 'sh **',
-        stdout: false,
-        stderr: false
+        command: 'sh',
+        stdout: true,
+        stderr: true
       }
     }
   });
