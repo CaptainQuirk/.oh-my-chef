@@ -10,3 +10,6 @@ tmp/*
 
 # Ignoring the test run list
 config/test.json
+
+# Ignoring npm modules
+node_modules
