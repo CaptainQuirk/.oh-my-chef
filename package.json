@@ -4,7 +4,9 @@
   "description": "Dev machine provisioning",
   "main": "null",
   "dependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-exec": "~0.4.2",
+    "grunt-contrib-watch": "~0.4.4"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,5 +17,5 @@
     "url": "git@captainquirkhub:CaptainQuirk/.oh-my-chef.git"
   },
   "author": "CaptainQuirk",
-  "license": "null"
+  "license": "BSD"
 }
