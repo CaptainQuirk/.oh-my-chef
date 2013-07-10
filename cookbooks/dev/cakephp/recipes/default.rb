@@ -59,7 +59,7 @@ end
 bash "Adding a remote to main repo" do
   cwd cake_repo
   code <<-EOH
-    test=`git remote show | grep #{split_origin}`
+    test=`git remote show | grep -e "^\s\?#{split_origin}$`
     if [ test != #{split_origin} ];
     then
       git remote add #{split_origin} #{split_repo}
@@ -71,7 +71,7 @@ end
 bash "Splitting the code" do
   cwd cake_repo
   code <<-EOH
-    test=`git branch -a | grep #{split_branch}`
+    test=`git branch -a | grep -e "^\*\?\s\?#{split_branch}$"`
     if [ test != #{split_branch} ];
     then
       git subtree split --prefix=lib/Cake -b #{split_branch}
