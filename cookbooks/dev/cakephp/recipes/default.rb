@@ -60,7 +60,7 @@ bash "Adding a remote to main repo" do
   cwd cake_repo
   code <<-EOH
     test=`git remote show | grep -e "^\s\?#{split_origin}$`
-    if [ test != #{split_origin} ];
+    if [ "$test" != '#{split_origin}' ];
     then
       git remote add #{split_origin} #{split_repo}
     fi
