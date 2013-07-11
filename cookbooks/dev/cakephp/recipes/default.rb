@@ -40,7 +40,6 @@ bash "merge-split-branch" do
 end
 
 # Downloading cakephp in hidden directory
-# @todo Fixing permission and ownership
 git cake_repo do
   repository cakephp_repository
   reference "master"
