@@ -35,7 +35,7 @@ bash "merge-split-branch" do
     git merge master
   EOH
   action :nothing
-  only_if ::Dir.exists?(split_repo) 
+  only_if { ::Dir.exists?(split_repo) }
   notifies :run, "bash[pushing-split-to-remote]"
 end
 
