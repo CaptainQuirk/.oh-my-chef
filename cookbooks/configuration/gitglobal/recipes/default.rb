@@ -22,7 +22,9 @@ end
 # making it executable
 bash "making git subtree executable" do
   cwd ENV['HOME']
-  command "chmod 755 /usr/share/doc/git/contrib/subtree/git-subtree.sh"
+  code <<-EOH 
+    chmod 755 /usr/share/doc/git/contrib/subtree/git-subtree.sh
+  EOH
 end
 
 # Symlinking it
