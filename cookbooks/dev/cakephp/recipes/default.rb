@@ -89,21 +89,3 @@ bash "Pushing split branch to our remote" do
     git push #{split_repo} #{split_branch}:master
   EOH
 end
-  #code <<-EOH
-    #mkdir "#{subtree_repo_name}"
-    #cd "#{subtree_repo_name}"
-    #git init
-  #EOH
-  #action :run
-#bash "#{ENV['HOME']}/.cakelib" do
-  #cwd ENV['HOME']
-  #code <<-EOH
-    #mkdir "#{subtree_repo_location}"
-    #cd "#{subtree_repo_location}"
-    #git init
-  #EOH
-  #action :run
-#end
-# Checking if version has changed compared to cache
-
-# Create subtree of it in our repository
