@@ -29,6 +29,4 @@ end
 link "symlinking git subtree script" do
   target_file "/usr/lib/git-core/git-subtree"
   to "/usr/share/doc/git/contrib/subtree/git-subtree.sh"
-  owner ENV['SUDO_USER'] 
-  group ENV['SUDO_USER']
 end
