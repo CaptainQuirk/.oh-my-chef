@@ -26,6 +26,19 @@ directory cake_dir do
   action :create
 end
 
+# Setting action to automatically update
+# the future split code
+bash "merge-split-branch" do
+  cwd cake_repo
+  code <<-EOH
+    git checkout -f #{split_branch}
+    git merge master
+  EOH
+  action :nothing
+  only_if ::Dir.exists?(slit_repo) 
+  notifies :run, "bash[pushing-split-to-remote]"
+end
+
 # Downloading cakephp in hidden directory
 # @todo Fixing permission and ownership
 git cake_repo do
@@ -35,6 +48,7 @@ git cake_repo do
   user ENV['SUDO_USER']
   group ENV['SUDO_USER']
   action :sync
+  notifies :run, 'bash[merge-split-branch]'
 end
 
 
@@ -79,12 +93,14 @@ bash "Splitting the code" do
       git subtree split --prefix=lib/Cake -b #{split_branch}
     fi
   EOH
+  notifies :run, "bash[pushing-split-to-remote]"
 end
 
 # Pushing the split branch's code to the master
 # branch on our split repo
-bash "Pushing split branch to our remote" do
+bash "pushing-split-to-remote" do
   cwd cake_repo
+  action :nothing
   code <<-EOH
     git push #{split_repo} #{split_branch}:master
   EOH
