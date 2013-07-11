@@ -32,6 +32,8 @@ git cake_repo do
   repository cakephp_repository
   reference "master"
   enable_submodules true
+  user ENV['SUDO_USER']
+  group ENV['SUDO_USER']
   action :sync
 end
 
