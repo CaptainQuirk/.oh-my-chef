@@ -30,6 +30,6 @@
     "recipe[zenity]",
     "recipe[nodejs]",
     "recipe[npm]",
-    "recipe[gruntjs]",
+    "recipe[gruntjs]"
   ]
 }
