@@ -31,6 +31,5 @@
     "recipe[nodejs]",
     "recipe[npm]",
     "recipe[gruntjs]",
-    "recipe[appcelerator]"
   ]
 }
