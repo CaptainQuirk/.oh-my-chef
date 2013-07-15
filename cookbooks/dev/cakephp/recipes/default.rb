@@ -82,7 +82,8 @@ bash "Adding a remote to main repo" do
   EOH
 end
 
-# actual code split
+# actual code split and first
+# push to the local « remote »
 bash "Splitting the code" do
   cwd cake_repo
   code <<-EOH
@@ -90,9 +91,9 @@ bash "Splitting the code" do
     if [ "$test" != '#{split_branch}' ];
     then
       git subtree split --prefix=lib/Cake -b #{split_branch}
+      git push #{split_repo} #{split_branch}:master
     fi
   EOH
-  notifies :run, "bash[pushing-split-to-remote]"
 end
 
 # Pushing the split branch's code to the master
