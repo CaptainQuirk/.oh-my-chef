@@ -86,7 +86,7 @@ end
 bash "Splitting the code" do
   cwd cake_repo
   code <<-EOH
-    test=`git branch -a | grep -e "^\\*\\?\s\\?#{split_branch}$"`
+    test=`git branch -a | grep -e "^\\*\\?\\s\\?#{split_branch}$" | sed -e 's/\*//'`
     if [ "$test" != '#{split_branch}' ];
     then
       git subtree split --prefix=lib/Cake -b #{split_branch}
