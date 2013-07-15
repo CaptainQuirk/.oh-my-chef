@@ -71,6 +71,7 @@ bash "Bare repository to hold the code" do
 end
 
 # Adding a remote to the main repo
+# And fixing permissions
 bash "Adding a remote to main repo" do
   cwd cake_repo
   code <<-EOH
@@ -78,6 +79,7 @@ bash "Adding a remote to main repo" do
     if [ "$test" != '#{split_origin}' ];
     then
       git remote add #{split_origin} #{split_repo}
+      chmod -R 777 #{cake_repo}
     fi
   EOH
 end
