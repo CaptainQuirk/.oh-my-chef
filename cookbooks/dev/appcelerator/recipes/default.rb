@@ -81,8 +81,12 @@ titanium_config = data_bag_item('configuration', 'titanium')
   end
 end
 
-appcelerator_titanium_sdk 'install' do
-  action :install
+#appcelerator_titanium_sdk 'install' do
+  #action :install
+#end
+batchelor_launch 'titanium install' do
+  action :launch
+  command "titanium sdk update --install"
 end
 
 # Retrieving last version of cli throught sdk update
