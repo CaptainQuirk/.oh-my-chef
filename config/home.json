@@ -1,6 +1,7 @@
 {
   "run_list": [
     "apt::default", 
+    "recipe[batchelor]",
     "recipe[build-essential]",
     "recipe[home]",
     "recipe[at]",
@@ -30,6 +31,7 @@
     "recipe[zenity]",
     "recipe[nodejs]",
     "recipe[npm]",
-    "recipe[gruntjs]"
+    "recipe[gruntjs]",
+    "recipe[appcelerator]"
   ]
 }
