@@ -2,9 +2,9 @@
 
 # Creating an empty file to welcome the return value
 # with unique name
-touch <%= @tmp_file %>
+touch tmp/<%= @tmp_file %>
 
 # Launching command in gnome terminal
-DISPLAY=:0 gnome-terminal -x <%= @command %>
+xterm -e /bin/bash -c '<%= @command %> && read -p "Press [enter] to close"'
 
 # Return a value based on gnome-terminal execution return
