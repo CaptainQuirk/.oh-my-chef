@@ -6,7 +6,8 @@ action :launch do
   # Building script with template
   script_filename = "#{new_resource.script_path}/#{identifyier}.sh"
   template script_filename do
-    source "#{ENV['HOME']}/.oh-my-chef/cookbooks/utilities/batchelor/templates/default/script.erb"
+    source "script.erb"
+    cookbook "batchelor"
     owner ENV['SUDO_USER']
     group ENV['SUDO_USER']
     mode 0755
