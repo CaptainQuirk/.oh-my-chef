@@ -1,3 +1,5 @@
+require 'uuid'
+
 # Installing oracle's java dev kit
 package 'default-jdk'
 
@@ -12,8 +14,6 @@ src_checksum = "#{node['android-sdk']['checksum']}"
 src_filepath = "#{Chef::Config['file_cache_path']}/#{src_filename}"
 extract_path = "#{ENV['HOME']}/.android/android-sdk"
 bin_symlink  = "#{node['android-sdk']['bin_symlink']}"
-
-
 
 # Getting remote archive
 remote_file src_filepath do
@@ -37,12 +37,14 @@ end
 # Adding a symlink in ~/bin folder for program tools/android
 link bin_symlink do
   to "#{extract_path}/tools/android"
+  owner ENV['SUDO_USER']
+  group ENV['SUDO_USER']
   action :create
   not_if { ::File.exists?(bin_symlink) }
 end
 
 # Adding the extract path to system PATH
-bash 'update-path' do
+bash 'update-path-if-needed' do
   cwd ENV['home']
   code <<-EOH
     if [[ "$PATH" =~ (^|:)"#{extract_path}"(:|$) ]]
@@ -53,6 +55,16 @@ bash 'update-path' do
   EOH
 end
 
+uuid        = UUID.new
+uuid_string = uuid.generate
+
+
+# Launching the android sdk update command
+batchelor_launch 'android-sdk-install' do
+  action :launch
+  command "android update sdk -u"
+  identifyier uuid_string
+end
 
 # Titanium SDK
 # ------------
