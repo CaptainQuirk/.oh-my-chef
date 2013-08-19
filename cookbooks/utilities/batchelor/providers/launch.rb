@@ -1,10 +1,12 @@
+#require 'uuid'
+
 action :launch do
   # Creating an available hash to be used as unique
   # script identifyier
-  identifyier = script_identifyier
+  #identifyier = script_identifyier
 
   # Building script with template
-  script_filename = "#{new_resource.script_path}/#{identifyier}.sh"
+  script_filename = "#{new_resource.script_path}/#{new_resource.identifyier}.sh"
   template script_filename do
     source "script.erb"
     cookbook "batchelor"
@@ -22,5 +24,8 @@ action :launch do
 end
 
 def script_identifyier
-  "ddksqj4E3fdjqsgdee4ERS"
+  uuid = UUID.new
+
+  uuid.generate
+  #"ddksqj4E3fdjqsgdee4ERS"
 end
