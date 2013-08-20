@@ -1,4 +1,4 @@
-#require 'uuid'
+require 'uuid'
 
 action :launch do
   # Creating an available hash to be used as unique
