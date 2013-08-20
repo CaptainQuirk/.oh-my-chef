@@ -30,6 +30,18 @@ action :launch do
 
   # Looping endlessly while content of the tmp file is empty
   # sleeping as long as sleep_time is specified
+  ruby_block "block_until_android_sdk_installed" do
+    block do
+      Chef::Log.info "Waiting until Android sdk installation is fullfilled ! "
+      until ::File.read(return_file).match "0" do
+        sleep new_resource.sleep_time
+        Chef::Log.debug(".")
+      end
+
+      ::File.delete(return_file)
+      ::File.delete(script_filename)
+    end
+  end
 end
 
 def script_identifyier
