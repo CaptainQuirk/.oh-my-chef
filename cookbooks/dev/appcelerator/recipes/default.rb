@@ -1,5 +1,3 @@
-require 'uuid'
-
 # Installing oracle's java dev kit
 package 'default-jdk'
 
@@ -27,9 +25,9 @@ bash 'extract_sdk' do
   cwd ::File.dirname(src_filepath)
   code <<-EOH
     mkdir -p #{extract_path}
-    chown -R #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']} #{ENV['HOME']}/.android
-    tar xzf #{src_filename} -C #{extract_path}
+    tar -xzf #{src_filename} -C #{extract_path}
     mv #{extract_path}/*/* #{extract_path}/
+    chown -R #{ENV['SUDO_USER']}:#{ENV['SUDO_USER']} #{ENV['HOME']}/.android
   EOH
   not_if { ::File.exists?(extract_path) }
 end
@@ -55,15 +53,10 @@ bash 'update-path-if-needed' do
   EOH
 end
 
-uuid        = UUID.new
-uuid_string = uuid.generate
-
-
 # Launching the android sdk update command
 batchelor_launch 'android-sdk-install' do
   action :launch
   command "android update sdk -u"
-  identifyier uuid_string
 end
 
 # Titanium SDK
@@ -93,9 +86,6 @@ titanium_config = data_bag_item('configuration', 'titanium')
   end
 end
 
-#appcelerator_titanium_sdk 'install' do
-  #action :install
-#end
 batchelor_launch 'titanium install' do
   action :launch
   command "titanium sdk update --install"
