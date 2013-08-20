@@ -24,7 +24,7 @@ action :launch do
     mode 0755
     variables(
       :command  => new_resource.command,
-      :tmp_file => "#{new_resource.return_file_path}/#{identifyier}"
+      :tmp_file => return_file
     )
   end
 
