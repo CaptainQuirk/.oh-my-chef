@@ -15,7 +15,7 @@ action :launch do
   end
 
   # Building script with template
-  script_filename = "#{new_resource.script_path}/#{new_resource.identifyier}.sh"
+  script_filename = "#{new_resource.script_path}/#{identifyier}.sh"
   template script_filename do
     source "script.erb"
     cookbook "batchelor"
