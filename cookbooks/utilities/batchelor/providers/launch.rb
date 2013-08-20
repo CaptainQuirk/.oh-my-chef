@@ -3,7 +3,16 @@
 action :launch do
   # Creating an available hash to be used as unique
   # script identifyier
-  #identifyier = script_identifyier
+  identifyier = script_identifyier
+
+  # Creating file to hold return value
+  return_file = "#{new_resource.return_file_path}/#{identifyier}"
+  file return_file do
+    owner ENV['SUDO_USER']
+    group ENV['SUDO_USER']
+    mode 0755
+    action :create
+  end
 
   # Building script with template
   script_filename = "#{new_resource.script_path}/#{new_resource.identifyier}.sh"
@@ -27,5 +36,4 @@ def script_identifyier
   uuid = UUID.new
 
   uuid.generate
-  #"ddksqj4E3fdjqsgdee4ERS"
 end
