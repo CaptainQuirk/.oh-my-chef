@@ -1,6 +1,8 @@
 {
   "run_list": [
     "apt::default", 
+    "recipe[nodejs]",
+    "recipe[npm]",
     "recipe[batchelor]",
     "recipe[build-essential]",
     "recipe[home]",
@@ -34,8 +36,6 @@
     "recipe[php5]",
     "recipe[composer]",
     "recipe[zenity]",
-    "recipe[nodejs]",
-    "recipe[npm]",
     "recipe[gruntjs]",
     "recipe[appcelerator]"
   ]
