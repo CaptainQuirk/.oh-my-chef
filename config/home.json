@@ -23,6 +23,7 @@
     "recipe[dia]",
     "recipe[filezilla]",
     "firefox::default",
+    "google-chrome::default",
     "recipe[gimp]",
     "recipe[inkscape]",
     "recipe[meld]",
