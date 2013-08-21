@@ -16,6 +16,7 @@
     "recipe[xcompmgr]",
     "recipe[curl]",
     "recipe[markdown]",
+    "recipe[misc]",
     "recipe[virtualbox]",
     "recipe[ack]",
     "recipe[dia]",
