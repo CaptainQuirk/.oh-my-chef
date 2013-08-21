@@ -22,6 +22,7 @@
     "recipe[ack]",
     "recipe[dia]",
     "recipe[filezilla]",
+    "firefox::default",
     "recipe[gimp]",
     "recipe[inkscape]",
     "recipe[meld]",
