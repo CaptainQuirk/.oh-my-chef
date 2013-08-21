@@ -33,3 +33,12 @@ action :uninstall_local do
     command cmd
   end
 end
+
+action :install_all do
+  path = new_resource.path if new_resource.path
+  cmd  = "npm install -l"
+  execute "installing dependencies through package.json file" do
+    cwd path
+    command cmd
+  end
+end

@@ -1,4 +1,3 @@
-
 # Downloading batchelor configuration in hidden directory
 git "#{ENV['HOME']}/.batchelor" do
   repository "https://github.com/CaptainQuirk/.batchelor.git"
@@ -9,8 +8,7 @@ git "#{ENV['HOME']}/.batchelor" do
   action :sync
 end
 
-# Launching command
-#butler_launch 'welcome' do
-  #command 'nano'
-  #action :launch
-#end
+npm_package 'install_dependencies' do
+  path "#{ENV['HOME']}/.batchelor"
+  action :install_all
+end

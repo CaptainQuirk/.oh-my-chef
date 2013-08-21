@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 
-actions :install, :install_local, :uninstall, :uninstall_local
+actions :install, :install_local, :uninstall, :uninstall_local, :install_all
 
 attribute :name, :name_attribute => true
 attribute :version, :default => nil
