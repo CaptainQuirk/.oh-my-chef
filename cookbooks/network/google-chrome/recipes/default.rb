@@ -1,1 +1,1 @@
-package 'google-chrome'
+package 'google-chrome-stable'
