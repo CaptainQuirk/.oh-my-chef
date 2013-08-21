@@ -17,6 +17,7 @@
     "recipe[curl]",
     "recipe[markdown]",
     "recipe[misc]",
+    "recipe[wine]",
     "recipe[virtualbox]",
     "recipe[ack]",
     "recipe[dia]",
