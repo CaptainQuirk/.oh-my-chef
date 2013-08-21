@@ -95,7 +95,10 @@ end
 
 # Calling a special install command to
 # get the cli's last version
-# titanium sdk install --branch master --default
+batchelor_launch 'titanium install' do
+  action :launch
+  command "titanium sdk install --branch master --default"
+end
 
 appcelerator_titanium_auth 'logout' do
   action :logout
