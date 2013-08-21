@@ -1,0 +1,12 @@
+[submodule "cookbooks/dev/php"]
+	path = cookbooks/dev/php
+	url = https://github.com/opscode-cookbooks/php.git
+[submodule "cookbooks/dev/mysql"]
+	path = cookbooks/dev/mysql
+	url = https://github.com/opscode-cookbooks/mysql.git
+[submodule "cookbooks/dev/openssl"]
+	path = cookbooks/dev/openssl
+	url = https://github.com/opscode-cookbooks/openssl.git
+[submodule "cookbooks/dev/xml"]
+	path = cookbooks/dev/xml
+	url = https://github.com/opscode-cookbooks/xml.git
