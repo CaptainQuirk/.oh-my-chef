@@ -1,0 +1,9 @@
+{
+  "run_list": [
+    "apt::default", 
+    "recipe[nodejs]",
+    "recipe[npm]",
+    "recipe[gruntjs]",
+    "recipe[batchelor]"
+  ]
+}
