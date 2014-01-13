@@ -1,0 +1,15 @@
+# Ignoring content of folder of automatically generated scripts
+# but keeping the folder itself
+scripts_tank/*
+!scripts_tank/empty
+
+# Ignoring tmp folder content
+# but keeping the folder itself
+tmp/*
+!tmp/empty
+
+# Ignoring the test run list
+config/test.json
+
+# Ignoring npm modules
+node_modules
