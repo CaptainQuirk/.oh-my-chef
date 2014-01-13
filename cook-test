@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "» Launching chef solo"
+
+chef-solo -c config/solo.rb -j config/test.json $*
