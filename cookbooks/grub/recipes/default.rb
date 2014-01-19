@@ -4,3 +4,8 @@ template '/etc/default/grub' do
   owner 'root'
   group 'root'
 end
+
+batch 'update grub' do
+  action :run
+  command 'update-grub'
+end

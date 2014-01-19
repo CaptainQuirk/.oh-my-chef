@@ -11,5 +11,11 @@ describe 'grub::default' do
       group: 'root'
     )
   end
+
+  it 'updates grub config' do
+    expect(chef_run).to run_batch('update grub').with(
+      command: 'update-grub'
+    )
+  end
 end
 
