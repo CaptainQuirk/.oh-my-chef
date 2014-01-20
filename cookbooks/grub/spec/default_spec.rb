@@ -13,7 +13,7 @@ describe 'grub::default' do
   end
 
   it 'updates grub config' do
-    expect(chef_run).to run_bash('update grub').with(
+    expect(chef_run).to run_execute('update grub').with(
       command: 'update-grub'
     )
   end

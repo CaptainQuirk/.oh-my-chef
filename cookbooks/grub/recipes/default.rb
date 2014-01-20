@@ -5,7 +5,6 @@ template '/etc/default/grub' do
   group 'root'
 end
 
-bash 'update grub' do
-  action :run
+execute 'update grub' do
   command 'update-grub'
 end
