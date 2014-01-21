@@ -7,6 +7,10 @@ describe 'system::default' do
     expect(chef_run).to include_recipe('grub::default')
   end
 
+  it 'includes the X recipe' do
+    expect(chef_run).to include_recipe('x11::default')
+  end
+
   it 'includes the fluxbox recipe' do
     expect(chef_run).to include_recipe('fluxbox::default')
   end
