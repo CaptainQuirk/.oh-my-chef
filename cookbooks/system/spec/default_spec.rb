@@ -6,4 +6,8 @@ describe 'system::default' do
   it 'includes the grub recipe' do
     expect(chef_run).to include_recipe('grub::default')
   end
+
+  it 'includes the fluxbox recipe' do
+    expect(chef_run).to include_recipe('fluxbox::default')
+  end
 end
