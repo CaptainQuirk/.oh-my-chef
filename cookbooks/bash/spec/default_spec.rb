@@ -5,7 +5,9 @@ describe 'bash::default' do
 
   it 'writes a .bash_profile file' do
     expect(chef_run).to create_template("#{ENV['HOME']}/.bash_profile").with(
-      source: 'bash_profile.erb'
+      source: 'bash_profile.erb',
+      user: "#{ENV['USER']}",
+      group: "#{ENV['USER']}"
     )
   end
 end
