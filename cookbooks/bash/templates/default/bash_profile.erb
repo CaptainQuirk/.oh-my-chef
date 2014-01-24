@@ -3,6 +3,8 @@
 ## Starting x on login
 if [[ -z $DISPLAY ]]; 
 then
+  cd ~/.oh-my-chef
+  git pull
   sudo chef-solo -c config/solo.rb -j config/system.json
   startx
 fi
