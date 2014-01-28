@@ -13,3 +13,6 @@ config/test.json
 
 # Ignoring npm modules
 node_modules
+
+# Ignoring swap files
+*~
