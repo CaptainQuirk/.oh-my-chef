@@ -1,3 +1,12 @@
 {
-  "run_list": [ "system::default" ]
+  "run_list": [ "system::default" ],
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": [ "virtualeo" ],
+        "users":  [ "virtualeo" ],
+        "passwordless": "true"
+      }
+    }
+  }
 }
