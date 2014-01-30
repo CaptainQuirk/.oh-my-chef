@@ -1,8 +1,9 @@
 root_path = File.expand_path(File.join(File.dirname(__FILE__), '..'))
  
-base_cookbook_path = File.join(root_path, 'cookbooks')
+base_cookbook_path   = File.join(root_path, 'cookbooks')
+vendor_cookbook_path = File.join(root_path, 'vendor/cookbooks')
 
-cookbook_path = [ base_cookbook_path, 'vendor/cookbooks' ]
+cookbook_path [ base_cookbook_path, vendor_cookbook_path ]
 role_path       File.join(root_path, 'roles')
  
 
