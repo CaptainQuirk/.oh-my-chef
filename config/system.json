@@ -1,10 +1,15 @@
 {
   "run_list": [ "system::default" ],
-  "sudo": {
-    "prefix": "/etc",
-    "groups": [ "virtualeo" ],
-    "users":  [ "virtualeo" ],
-    "passwordless": "true",
-    "include_sudoers_d": "true"
+  "override_attributes": {
+    "authorization": {
+      "sudo": {
+        "prefix": "/etc",
+        "groups": [ "virtualeo" ],
+        "users":  [ "virtualeo" ],
+        "passwordless": "true",
+        "include_sudoers_d": "true"
+      }
+    }
   }
+
 }
