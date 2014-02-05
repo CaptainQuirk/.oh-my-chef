@@ -1,5 +1,5 @@
 }
   "id": "virtualeo"
   "groups": [ "sysadmin" ],
-  "uid": 1000,
+  "uid": "1000",
 }
