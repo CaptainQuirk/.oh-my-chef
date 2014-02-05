@@ -1,3 +1,6 @@
 [submodule "vendor/cookbooks/sudo"]
 	path = vendor/cookbooks/sudo
 	url = https://github.com/opscode-cookbooks/sudo.git
+[submodule "vendor/cookbooks/users"]
+	path = vendor/cookbooks/users
+	url = https://github.com/opscode-cookbooks/users.git
