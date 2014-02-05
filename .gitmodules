@@ -4,3 +4,6 @@
 [submodule "vendor/cookbooks/users"]
 	path = vendor/cookbooks/users
 	url = https://github.com/opscode-cookbooks/users.git
+[submodule "vendor/cookbooks/chef-solo-search"]
+	path = vendor/cookbooks/chef-solo-search
+	url = https://github.com/edelight/chef-solo-search.git
