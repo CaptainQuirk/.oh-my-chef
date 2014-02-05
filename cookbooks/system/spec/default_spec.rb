@@ -3,6 +3,10 @@ require 'chefspec'
 describe 'system::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
+  it 'includes the users recipe' do
+    expect(chef_run).to include_recipe('users::sysadmins')
+  end
+
   it 'includes the sudo recipe' do
     expect(chef_run).to include_recipe('sudo::default')
   end

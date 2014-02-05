@@ -1,3 +1,4 @@
+include_recipe 'users::sysadmins'
 include_recipe 'sudo::default'
 include_recipe 'grub::default'
 include_recipe 'bash::default'
