@@ -17,4 +17,4 @@ file_backup_path "#{state_root_path}/backup"
 cache_options[:path] = file_cache_path
 
 # Setting data_bag_path
-data_bag_path  "#{ENV['HOME']}/.data"
+data_bag_path  File.join(root_path, 'data_bags')
